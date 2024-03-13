@@ -7,6 +7,9 @@ const PORT = process.env.PORT
 const app = express()
 
 // ROUTES
+
+app.set('views', __dirname + '/views')
+app.set('view engine')
 app.get('/', (req, res) => {
   res.send('Welcome to an Awesome App about Breads!')
 })
