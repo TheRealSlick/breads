@@ -9,12 +9,18 @@ const app = express()
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
 app.set('view engine')
+app.use(express.static('public'))
 app.engine('jsx', require('express-react-views').createEngine())
 
 
 // ROUTES
 app.get('/', (req, res) => {
   res.send('Welcome to an Awesome App about Breads!')
+})
+
+// 404 Page
+app.get('*', (req, res) => {
+  res.send('404')
 })
 
 // Breads
